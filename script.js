@@ -19,5 +19,31 @@ function handleAdd(event) {
   tasksContainer.appendChild(task);
 }
 
+// edit tasks
+function handleEdit(event) {
+  const task = event.target.closest(".task");
+  if (!task) return;
+
+  const input = document.createElement("div");
+  input.className = "task-input";
+  input.contentEditable = true;
+  input.innerText = task.innerText;
+
+  // if click away save task
+  input.addEventListener("blur", () => {
+    const newText = input.innerText.trim();
+    if (newText !== "") {
+      task.textContent = newText;
+      input.replaceWith(task);
+    } else {
+      input.replaceWith(task); // leere Eingabe = abbrechen
+    }
+  });
+
+  task.replaceWith(input);
+  input.focus();
+}
+
 // every time button is clicked, run function
 columnsContainer.addEventListener("click", handleAdd);
+columnsContainer.addEventListener("dblclick", handleEdit);
