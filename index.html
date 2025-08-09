@@ -4,37 +4,36 @@
     <meta charset="UTF-8" />
     <title>Kanban Board</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="script.js" defer></script>
   </head>
+
   <body>
-    <div class="container">
-      <h1>Kanban Board</h1>
-    </div>
 
-    <div class="container columns">
-      <div class="column">
-        <div class="column-title">
-          <h3 data-tasks="0">To Do</h3>
-          <button data-add>+</button>
-        </div>
-        <div class="tasks"></div>
-      </div>
+    <main class="board">
+      <section class="column">
+        <header class="column-header">
+          <h1 id="col-todo">To Do</h1>
+          <button class="add-task">+</button>
+        </header>
+        <div class="task-list"></div>
+      </section>
 
-      <div class="column">
-        <div class="column-title">
-          <h3 data-tasks="0">In Progress</h3>
-          <button data-add>+</button>
-        </div>
-        <div class="tasks"></div>
-      </div>
-    
-      <div class="column">
-        <div class="column-title">
-          <h3 data-tasks="0">Done</h3>
-          <button data-add>+</button>
-        </div>
-        <div class="tasks"></div>
-      </div>
-    </div>
+      <section class="column">
+        <header class="column-header">
+          <h1 id="col-progress">In Arbeit</h1>
+          <button class="add-task">+</button>
+        </header>
+        <div class="task-list"></div>
+      </section>
+
+      <section class="column">
+        <header class="column-header">
+          <h1 id="col-done">Erledigt</h1>
+          <button class="add-task">+</button>
+        </header>
+        <div class="task-list"></div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
   </body>
 </html>
